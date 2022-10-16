@@ -10,7 +10,6 @@ public class mainv2 {
 	public static Developer[] developer = new Developer[5];
 	public static ProjectManager PM = new ProjectManager("");
 	public static Boolean isLoggedIn = false;
-	public static int userTypeLoggedIn = 0;
 	
 	public mainv2() {
 		Developer[] developer = null;
@@ -40,12 +39,7 @@ public class mainv2 {
 		System.out.print(isLoggedIn);
 		
 		if(isLoggedIn) {
-			if(userTypeLoggedIn == 1) {
-				// do task here for developers
-			}else if(userTypeLoggedIn == 2) {
-				// do task here for PMs
-			}
-			
+			// do task here
 		}
 		
 	
@@ -171,7 +165,6 @@ public class mainv2 {
 					if(username.equals(developer[i-1].getUsername())) {
 						if(password.equals(developer[i-1].getUserPass())) {
 							isLoggedIn = true;
-							userTypeLoggedIn = 1;
 							break;
 						}
 					}
@@ -182,24 +175,6 @@ public class mainv2 {
 				}
 			}
 			
-		}else if(response == 2) {
-			if(maxPMs != 0) {
-				System.out.println("Please register first!");
-			}else {
-				System.out.print("Username: ");
-				String username = s.nextLine();
-				System.out.print("Password: ");
-				String password = s.nextLine();
-				if(username.equals(PM.getUsername())) {
-					if(password.equals(PM.getUserPass())) {
-						isLoggedIn = true;
-						userTypeLoggedIn = 2;
-					}
-				}
-				if(isLoggedIn == false) {
-					System.out.println("Username and Password doesn't match.");
-				}
-			}
 		}
 		
 		
